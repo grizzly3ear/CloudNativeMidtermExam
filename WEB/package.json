@@ -1,0 +1,20 @@
+{
+  "name": "CloudNativeMidtermExam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/grizzly3ear/CloudNativeMidtermExam.git",
+  "author": "Grizzly Bear <vitsarut.udomphol2@mail.kmutt.ac.th>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "next": "^6.0.2",
+    "nextjs": "^0.0.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
