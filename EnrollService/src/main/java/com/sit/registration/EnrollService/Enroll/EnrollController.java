@@ -27,5 +27,10 @@ public class EnrollController {
     public ResponseEntity<List<Long>> getEnrolledSubjectId(@PathVariable long studentId){
         return new ResponseEntity<>(enrollService.getEnrolledSubject(studentId), HttpStatus.OK);
     }
+
+    @GetMapping("/seat/{subjectId}/unavailable")
+    public ResponseEntity<Integer> getUnavailableSeat(@PathVariable long subjectId){
+        return new ResponseEntity<>(enrollService.getUnavailableSeat(subjectId), HttpStatus.OK);
+    }
     
 }

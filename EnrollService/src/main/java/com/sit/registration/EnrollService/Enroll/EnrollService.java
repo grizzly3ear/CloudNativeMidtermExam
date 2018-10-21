@@ -43,4 +43,8 @@ public class EnrollService {
         }
 		return enrolledSubjectId;
 	}
+
+	public int getUnavailableSeat(long subjectId) {
+		return enrollRepository.countBySubjectId(subjectId);
+	}
 }
