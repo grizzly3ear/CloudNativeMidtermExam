@@ -19,4 +19,11 @@ public class SubjectAdaptor {
         int year = restTemplate.getForObject(url, Integer.class);
         return year;
     }
+
+	public int getUnAvailableSeat(long subjectId) {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/seat/"+subjectId+"/unavailable";
+        int seat = restTemplate.getForObject(url, Integer.class);
+		return seat;
+	}
 }

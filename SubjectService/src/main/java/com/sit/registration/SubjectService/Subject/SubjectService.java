@@ -14,9 +14,6 @@ public class SubjectService{
 
     @Autowired
     private SubjectAdaptor subjectAdaptor;
-    
-
-    
 
     public List<Subject> getAll(){
         return subjectRepository.findAll();
@@ -36,6 +33,8 @@ public class SubjectService{
             if(allSubject.contains(enrolled)){
                 allSubject.remove(enrolled);
                 numberOfEnroll++;
+            }if(!isSeatAvailable(subjectId)){
+                allSubject.remove(enrolled);
             }
         }
         if(year < 3){
@@ -46,6 +45,18 @@ public class SubjectService{
             allSubject.clear();
         }
         return allSubject;
+    }
+
+    public boolean isSeatAvailable(long subjectId){
+        return getSeat(subjectId) > getUnavailableSeat(subjectId);
+    }
+
+    public int getSeat(long subjectId){
+        return subjectRepository.getOne(subjectId).getSeat();
+    }
+
+    public int getUnavailableSeat(long subjectId){
+        return subjectAdaptor.getUnAvailableSeat(subjectId);
     }
 
 }
