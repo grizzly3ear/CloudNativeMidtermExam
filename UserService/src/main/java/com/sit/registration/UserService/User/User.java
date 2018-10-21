@@ -15,6 +15,9 @@ public class User implements Serializable{
     private long id;
 
     @NotBlank
+    private String password;
+
+    @NotBlank
     private String firstname;
 
     @NotBlank
@@ -75,5 +78,12 @@ public class User implements Serializable{
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+    public void setPassword(String password){
+        this.password = password;
     }
 }
