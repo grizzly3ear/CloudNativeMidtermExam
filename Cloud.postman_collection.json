@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "4076777c-6f73-46cc-9a16-697cf4fc64aa",
+		"name": "Cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://userservice-forgiving-nyala.mybluemix.net/users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "29d46f3d-cc4e-442a-bf05-57fa65483c13",
+						"exec": [
+							"pm.test(\"\", function(){",
+							"    var jsonData = pm.response.json()",
+							"    pm.expect(jsonData[0].id).to.eql(58130500009)",
+							"    pm.expect(jsonData[0].password).to.eql(\"900503185\")",
+							"    pm.expect(jsonData[0].firstname).to.eql(\"Kanisorn\")",
+							"    pm.expect(jsonData[0].lastname).to.eql(\"Sutham\")",
+							"    pm.expect(jsonData[0].department).to.eql(\"IT\")",
+							"    pm.expect(jsonData[0].faculty).to.eql(\"SIT\")",
+							"    pm.expect(jsonData[0].year).to.eql(4)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"studentId\": 6,\n\t\"subjectId\": 3\n}"
+				},
+				"url": {
+					"raw": "https://userservice-forgiving-nyala.mybluemix.net/users",
+					"protocol": "https",
+					"host": [
+						"userservice-forgiving-nyala",
+						"mybluemix",
+						"net"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://userservice-forgiving-nyala.mybluemix.net/user/59130500089/year",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43fb8078-c450-4c6c-b767-d7fc051e703b",
+						"exec": [
+							"pm.test(\"\", function(){",
+							"    var jsonData = pm.response",
+							"    pm.expected(jsonData).to.eql(4);",
+							"",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\": \"Vitsarut\",\n\t\"lastname\": \"Udomphol\"\n}"
+				},
+				"url": {
+					"raw": "https://userservice-forgiving-nyala.mybluemix.net/user/59130500089/year",
+					"protocol": "https",
+					"host": [
+						"userservice-forgiving-nyala",
+						"mybluemix",
+						"net"
+					],
+					"path": [
+						"user",
+						"59130500089",
+						"year"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
