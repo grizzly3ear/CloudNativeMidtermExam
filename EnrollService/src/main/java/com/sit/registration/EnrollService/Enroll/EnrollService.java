@@ -34,4 +34,13 @@ public class EnrollService {
             return false;
         }
     }
+
+	public List<Long> getEnrolledSubject(long studentId) {
+        List<Enroll> enrolled = enrollRepository.findByStudentId(studentId);
+        List<Long> enrolledSubjectId = new ArrayList<>();
+        for (Enroll enroll : enrolled) {
+            enrolledSubjectId.add(enroll.getSubjectId());
+        }
+		return enrolledSubjectId;
+	}
 }
