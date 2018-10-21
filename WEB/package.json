@@ -10,7 +10,8 @@
     "next": "^6.0.2",
     "nextjs": "^0.0.3",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "styled-components": "^4.0.2"
   },
   "scripts": {
     "dev": "next",
