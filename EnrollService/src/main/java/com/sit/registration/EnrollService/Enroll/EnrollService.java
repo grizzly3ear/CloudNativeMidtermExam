@@ -12,15 +12,12 @@ public class EnrollService {
     @Autowired
     private EnrollRepository enrollRepository;
 
-    public  List<Enroll> enroll(List<Enroll> enrolls){
-        List<Enroll> enrolled = new ArrayList<>();
-        for (Enroll enroll : enrolls) {
+    public  Enroll enroll(Enroll enroll){
             if(checkIfAvailableToEnroll(enroll)){
-                enrolled.add(enroll);
                 enrollRepository.save(enroll);
+                return enroll;
             }    
-        }
-        return enrolled;
+        return  null;
     }
 
     public boolean checkIfAvailableToEnroll(Enroll enroll){
@@ -37,6 +34,7 @@ public class EnrollService {
 
 	public List<Long> getEnrolledSubject(long studentId) {
         List<Enroll> enrolled = enrollRepository.findByStudentId(studentId);
+        System.out.print(enrolled);
         List<Long> enrolledSubjectId = new ArrayList<>();
         for (Enroll enroll : enrolled) {
             enrolledSubjectId.add(enroll.getSubjectId());
