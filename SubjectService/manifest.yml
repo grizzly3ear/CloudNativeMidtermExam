@@ -1,0 +1,5 @@
+applications:
+- name: SubjectService
+  random-route: true
+  memory: 256MB
+  path: target/SubjectService-0.0.1-SNAPSHOT.jar
