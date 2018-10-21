@@ -15,8 +15,12 @@ public class SubjectController{
     
     @GetMapping("/subjects")
     public ResponseEntity<List<Subject>> getAllSubject(){
-        
-        return new ResponseEntity(subjectService.getAll(), HttpStatus.OK);
+        return new ResponseEntity<>(subjectService.getAll(), HttpStatus.OK);
+    }
+    
+    @GetMapping("/subject/{studentId}")
+    public ResponseEntity<List<Subject>> getAllSubjectThatAvailableForUser(long studentId){
+        return new ResponseEntity<>(subjectService.getSubjectThatUserCanEnroll(studentId), HttpStatus.OK);
     }
 
 }

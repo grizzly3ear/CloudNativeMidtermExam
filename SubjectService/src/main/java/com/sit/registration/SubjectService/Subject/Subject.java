@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="subjects")
@@ -26,7 +27,7 @@ public class Subject implements Serializable{
     @NotBlank
     private String lecturer;
 
-    @NotBlank
+    @NotNull
     private int seat;
 
     public long getId() {
