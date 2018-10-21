@@ -1,0 +1,5 @@
+applications:
+- name: EnrollService
+  random-route: true
+  memory: 256MB
+  path: target/EnrollService-0.0.1-SNAPSHOT.jar
