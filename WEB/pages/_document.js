@@ -8,7 +8,6 @@ export default class MyDocument extends Document {
     constructor() {
         super()
         this.state = {
-            user: ''
         }
     }
     static async getInitialProps(ctx) {
@@ -19,11 +18,7 @@ export default class MyDocument extends Document {
         const styleTags = sheet.getStyleElement()
         return { ...page, styleTags, ...props }
     }
-    setUser(data){
-        this.setState({
-            user: data
-        })
-    }
+
     render() {
         return (
             <html>
@@ -36,7 +31,7 @@ export default class MyDocument extends Document {
                     {this.props.styleTags}
                 </Head>
                 <body>
-                    <Main setUser ={this.setUser}/>
+                    <Main />
                     <NextScript />
                 </body>
             </html>
