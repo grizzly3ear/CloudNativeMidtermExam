@@ -12,7 +12,7 @@ export default class extends React.Component{
     render(){
         return (
             <div>
-                <SubjectList user={this.props.user}/>
+                <SubjectList user={this.props.user} setPage={this.props.setPage} />
             </div>
         )
     }
