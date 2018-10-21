@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class SubjectController{
@@ -19,7 +20,7 @@ public class SubjectController{
     }
     
     @GetMapping("/subject/{studentId}")
-    public ResponseEntity<List<Subject>> getAllSubjectThatAvailableForUser(long studentId){
+    public ResponseEntity<List<Subject>> getAllSubjectThatAvailableForUser(@PathVariable long studentId){
         return new ResponseEntity<>(subjectService.getSubjectThatUserCanEnroll(studentId), HttpStatus.OK);
     }
 
