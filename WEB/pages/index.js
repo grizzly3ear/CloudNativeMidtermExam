@@ -18,11 +18,16 @@ export default class extends React.Component{
             page: 'home'
         })
     }
+    setPage(page){
+        this.setState({
+            page: page
+        })
+    }
     render(){
         let content = ''
         switch(this.state.page){
             case '': content = <Login setUser = {this.setUser}/>; break;
-            case 'home': content = <Home user = {this.state.user}/>
+            case 'home': content = <Home user = {this.state.user} />; break;
         }
         return (<div>
             <NavBar />
