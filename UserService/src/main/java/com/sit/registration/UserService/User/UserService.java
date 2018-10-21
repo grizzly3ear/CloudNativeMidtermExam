@@ -14,4 +14,8 @@ public class UserService{
         return userRepository.findAll();
     }
 
+    public long getYear(long studentId){
+        return userRepository.getOne(studentId).getYear();
+    }
+
 }
