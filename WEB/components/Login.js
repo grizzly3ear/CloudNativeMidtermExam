@@ -15,6 +15,8 @@ class Login extends React.Component {
         const data =await axios.post('/login', {
             id: parseInt(this.state.id),
             password: this.state.password
+        },{
+            baseURL: 'https://userservice-forgiving-nyala.mybluemix.net'
         });  
         if(data.data.id){
 
@@ -24,13 +26,8 @@ class Login extends React.Component {
             window.location.href = '/home'
         }
         
-        console.log({data}.data);
     }
     componentDidMount(){
-        console.log('mount')
-        if(this.state.message == 'pass'){
-            console.log('say hi')
-        }
     }
 
     render() {
